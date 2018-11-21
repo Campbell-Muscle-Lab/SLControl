@@ -1,0 +1,17 @@
+
+pdef create_pipes
+
+  phigh=32439
+  pplus=0
+  pneg=step
+  pzero=0
+  pzero2=0
+  pzero3=0
+
+  nmerge(pre,pzero,duration,pneg,duration,pplus,post,pzero2,pout)
+  nmerge(trig_high,phigh,trig_low,pzero3,ptrig)
+
+end
+
+;************************************************************
+

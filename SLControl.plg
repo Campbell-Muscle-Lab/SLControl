@@ -1,0 +1,57 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: SLControl - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP284.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /D "NDEBUG" /D "DAPIO32" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /Fp"Release/SLControl.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\Ken\SLControl_Development\SLControl\Fit_control.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP284.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP285.tmp" with contents
+[
+dapio32.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/SLControl.pdb" /machine:I386 /out:"Release/SLControl.exe" /libpath:"c:\Program Files\Microstar Laboratories\DapDev\DLL\LIB\MC" 
+.\Release\Abort_multiple_trials.obj
+.\Release\Analysis_display.obj
+.\Release\Batch_analysis.obj
+.\Release\Cal_display.obj
+.\Release\Calibration.obj
+.\Release\Chirp.obj
+.\Release\Cyclical.obj
+.\Release\Data_record.obj
+.\Release\Experiment_display.obj
+.\Release\File_header.obj
+.\Release\Fit_control.obj
+.\Release\Fit_parameters.obj
+.\Release\global_functions.obj
+.\Release\NR.obj
+.\Release\Plot.obj
+.\Release\Scan_channels.obj
+.\Release\SL_SREC.obj
+.\Release\SLControl.obj
+.\Release\SLControlDlg.obj
+.\Release\Square_wave.obj
+.\Release\StdAfx.obj
+.\Release\Superposition.obj
+.\Release\Superposition_control.obj
+.\Release\Tension_control_dialog.obj
+.\Release\SLControl.res
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP285.tmp"
+<h3>Output Window</h3>
+Compiling...
+Fit_control.cpp
+Linking...
+LINK : warning LNK4098: defaultlib "LIBCMT" conflicts with use of other libs; use /NODEFAULTLIB:library
+
+
+
+<h3>Results</h3>
+SLControl.exe - 0 error(s), 1 warning(s)
+</pre>
+</body>
+</html>

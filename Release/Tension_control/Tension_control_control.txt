@@ -1,0 +1,20 @@
+
+pdef control
+  poffset=((1-poffset_marker)*plastoffset)+(poffset_marker*ip0)
+  plastoffset=poffset
+
+  pdifference=pservo*(ip0-ptarget_force-poffset)
+  pamplified_diff=5*pdifference
+  raverage(pamplified_diff,10,pintegral)
+
+  pfeedback=plastout+(1*(10*(ip0-ptarget_force-poffset)/10000))+(1*(10*pintegral)/10000)
+  pout=((1-pservo)*pfl)+(pservo*pfeedback)
+
+  copy(pout,plastout,op1)
+  copy(ptrigger,op0)
+
+  merge(ip0,ip1,ip2,ip3,$binout)
+end
+
+;************************************************************
+

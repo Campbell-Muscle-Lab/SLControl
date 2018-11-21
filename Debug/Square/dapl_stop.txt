@@ -1,0 +1,7 @@
+stop
+
+start output_zero,zero_control
+
+pause 5
+RESET
+

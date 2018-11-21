@@ -1,0 +1,83 @@
+RESET
+
+OPTION UNDERFLOWQ=OFF
+OPTION ERRORQ=OFF
+OPTION SCHEDULING=FIXED
+OPTION BUFFERING=OFF
+OPTION QUANTUM=100
+
+;************************************************************
+
+// Header
+
+pipes phigh
+pipes pplus
+pipes pneg
+pipes pstep
+pipes pzero
+pipes pzero2
+pipes pzero3
+
+pipes pout
+pipes ptrig
+
+constants pre=10
+constants post=10
+constants duration=200
+
+constants trig_high=1
+constants trig_low=419
+
+constants step=-421
+
+;************************************************************
+
+
+pdef create_pipes
+
+  phigh=32439
+  pplus=0
+  pneg=step
+  pzero=0
+  pzero2=0
+  pzero3=0
+
+  nmerge(pre,pzero,duration,pneg,duration,pplus,post,pzero2,pout)
+  nmerge(trig_high,phigh,trig_low,pzero3,ptrig)
+
+end
+
+;************************************************************
+
+
+pdef control
+  copy(ptrig,op0)
+  copy(pout,op1)
+
+  merge(ip0,ip1,ip2,ip3,$binout)
+end
+
+;************************************************************
+
+
+odef outputproc 2
+  set op0 a0
+  set op1 a1
+  time 500
+  count 840
+end
+
+;************************************************************
+
+idef inputproc 4
+  set ip0 s0
+  set ip1 s1
+  set ip2 s2
+  set ip3 s3
+  count 1680
+  time 250
+end
+
+;************************************************************
+
+start create_pipes,control,inputproc,outputproc

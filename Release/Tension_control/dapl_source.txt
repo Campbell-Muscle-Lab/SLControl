@@ -1,0 +1,163 @@
+RESET
+
+OPTION UNDERFLOWQ=OFF
+OPTION ERRORQ=OFF
+OPTION SCHEDULING=FIXED
+OPTION BUFFERING=OFF
+OPTION QUANTUM=100
+
+;************************************************************
+
+// Header
+
+pipes pfl MAXSIZE=65500
+pipes ptarget_force MAXSIZE=65500
+
+pipes pservo MAXSIZE=65500
+
+pipes poffset_marker MAXSIZE=65500
+pipes poffset MAXSIZE=65500
+pipes plastoffset MAXSIZE=65500
+
+pipes pout MAXSIZE=65500
+pipes plastout MAXSIZE=65500
+
+pipes pfeedback MAXSIZE=65500
+
+pipes ptrigger MAXSIZE=65500
+
+pipes pdifference MAXSIZE=65500
+pipes pamplified_diff MAXSIZE=65500
+pipes pintegral MAXSIZE=65500
+
+;************************************************************
+
+
+fill ptrigger 32439
+
+fill plastout 0
+fill plastoffset 0
+
+fill pdifference 0
+fill pintegral 0 0 0 0 0 0 0 0 0
+
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+fill pservo 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+fill pservo 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+fill pservo 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+fill pservo 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+
+fill poffset_marker 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+fill poffset_marker 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+fill poffset_marker 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+fill poffset_marker 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+fill poffset_marker 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+fill poffset_marker 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+fill poffset_marker 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+fill poffset_marker 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+fill poffset_marker 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 843 843 843 843 843 843 843 843 843 843 843 843 843 843 843 843 843 843 843 843 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+
+fill ptarget_force 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget_force 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget_force 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget_force 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget_force 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget_force 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 
+fill ptarget_force 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 
+fill ptarget_force 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 
+fill ptarget_force 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 
+fill ptarget_force 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 655 
+fill ptarget_force 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget_force 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget_force 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget_force 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget_force 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+
+
+
+;************************************************************
+
+
+pdef create_pipes
+
+  ptrigger=0
+
+end
+
+;************************************************************
+
+
+pdef control
+  poffset=((1-poffset_marker)*plastoffset)+(poffset_marker*ip0)
+  plastoffset=poffset
+
+  pdifference=pservo*(ip0-ptarget_force-poffset)
+  pamplified_diff=5*pdifference
+  raverage(pamplified_diff,10,pintegral)
+
+  pfeedback=plastout+(1*(10*(ip0-ptarget_force-poffset)/10000))+(1*(10*pintegral)/10000)
+  pout=((1-pservo)*pfl)+(pservo*pfeedback)
+
+  copy(pout,plastout,op1)
+  copy(ptrigger,op0)
+
+  merge(ip0,ip1,ip2,ip3,$binout)
+end
+
+;************************************************************
+
+
+odef outputproc 2
+  outputwait 2
+  update burst
+  set op0 a0
+  set op1 a1
+  time 500
+end
+
+;************************************************************
+
+idef inputproc 4
+  set ip0 s0
+  set ip1 s1
+  set ip2 s2
+  set ip3 s3
+  count 1200
+  time 250
+end
+
+;************************************************************
+
+start create_pipes,control,inputproc,outputproc

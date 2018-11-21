@@ -1,0 +1,32 @@
+// Calibration Parameter Values
+// Last updated 8th November, 2002
+
+// Definitions below this point
+
+_FL_POLARITY_ -1.0											// Fibre Length Polarity
+															// +1 means fiber length increases with increasing
+															// DAPL integers
+															// -1 means fiber length decreases with increasing
+															// DAPL integers
+															// 9th October, 2001
+
+_FL_RESPONSE_CALIBRATION_ 147.5								// change in fiber length (microns)
+															// (motor position) for a +1V
+															// change in FL_Response voltage
+															// 8th January, 2003	
+
+_FL_COMMAND_CALIBRATION_ 155.4								// change in fiber length (microns)
+															// (motor position) for a +1V
+															// change in FL_Command voltage
+															// 8th January, 2003
+
+_FORCE_CALIBRATION_ 5.451e-4								// increase in force (N) for a +1V
+															// increase in Force voltage
+															// 8th January, 2003
+
+_CALIBRATION_DATE_ Aurora_8thJan_2003						// Must be a single string
+
+_FL_OR_SL_CHANNEL_MODE_ 1									// 0 for FL_channel_mode (FL and For channels)
+															// 1 for SL_channel_mode (FL, SL and For channels)
+
+

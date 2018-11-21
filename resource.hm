@@ -1,0 +1,9 @@
+// Microsoft Visual C++ generated Help ID include file.
+// Used by SLControl.rc
+//
+#define HIDC_KTR_FL_SETTLE              0x80ac0472    // IDD_CYCLICAL
+#define HIDC_POST_KTR                   0x80ae03fb    // IDD_CHIRP
+#define HIDC_POST_KTR_FINAL_FL          0x80ac040b    // IDD_CYCLICAL
+#define HIDC_POST_KTR_FL                0x8081040a    // IDD_SL_SREC_Dialog
+#define HIDC_PRE_KTR                    0x80ae0408    // IDD_CHIRP
+#define HIDC_STATIC                     0x80c1ffff    // IDD_TENSION_CONTROL

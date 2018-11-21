@@ -1,0 +1,16 @@
+
+pdef control
+  poffset=((1-poffset_marker)*plastoffset)+(poffset_marker*ip1)
+  plastoffset=poffset
+
+  pfeedback=plastout-(5*(ip1-ptarget-((1-zeroclamp)*poffset))/10000)
+  pout=((1-pservo)*pfl)+(pservo*pfeedback)
+
+  copy(pout,plastout,op1)
+  copy(ptrigger,op0)
+
+  merge(ip0,ip1,ip2,ip3,$binout)
+end
+
+;************************************************************
+

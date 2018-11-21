@@ -1,0 +1,10 @@
+
+pdef control
+  copy(ptrig,op0)
+  copy(pout,op1)
+
+  merge(ip0,ip1,ip2,ip3,$binout)
+end
+
+;************************************************************
+

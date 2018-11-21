@@ -1,0 +1,20 @@
+RESET
+
+OPTION SYSINECHO=OFF
+OPTION UNDERFLOWQ=OFF
+OPTION ERRORQ=OFF
+OPTION SCHEDULING=FIXED
+OPTION BUFFERING=OFF
+OPTION QUANTUM=100
+;***********************************************************
+
+// Header
+
+pipes ptriggers MAXSIZE=65500
+pipes pfl MAXSIZE=65500
+;***********************************************************
+
+OUTPORT 0..15 TYPE=0
+
+;***********************************************************
+

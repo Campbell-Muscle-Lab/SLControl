@@ -1,0 +1,34 @@
+RESET
+
+OPTION UNDERFLOWQ=OFF
+OPTION ERRORQ=OFF
+OPTION SCHEDULING=FIXED
+OPTION BUFFERING=OFF
+OPTION QUANTUM=100
+
+;************************************************************
+
+// Header
+
+pipes phigh
+pipes pplus
+pipes pneg
+pipes pstep
+pipes pzero
+pipes pzero2
+pipes pzero3
+
+pipes pout
+pipes ptrig
+
+constants pre=10
+constants post=10
+constants duration=200
+
+constants trig_high=1
+constants trig_low=419
+
+constants step=-421
+
+;************************************************************
+

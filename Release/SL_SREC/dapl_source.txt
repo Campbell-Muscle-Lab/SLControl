@@ -1,0 +1,298 @@
+RESET
+
+OPTION UNDERFLOWQ=OFF
+OPTION ERRORQ=OFF
+OPTION SCHEDULING=FIXED
+OPTION BUFFERING=OFF
+OPTION QUANTUM=100
+
+;************************************************************
+
+// Header
+
+pipes pfl MAXSIZE=65500
+pipes ptarget MAXSIZE=65500
+
+pipes pservo MAXSIZE=65500
+
+pipes poffset_marker MAXSIZE=65500
+pipes poffset MAXSIZE=65500
+pipes plastoffset MAXSIZE=65500
+
+pipes pout MAXSIZE=65500
+pipes plastout MAXSIZE=65500
+
+pipes pfeedback MAXSIZE=65500
+
+pipes ptrigger MAXSIZE=65500
+
+;************************************************************
+
+variables zeroclamp
+
+;************************************************************
+
+let zeroclamp=0
+
+;************************************************************
+
+
+fill ptrigger 32439
+
+fill plastout 0
+fill plastoffset 0
+
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pservo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+
+fill poffset_marker 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+fill poffset_marker 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+fill poffset_marker 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+fill poffset_marker 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+fill poffset_marker 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill poffset_marker 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 843 843 843 843 843 843 843 843 843 843 843 843 843 843 843 843 843 843 843 843 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill pfl 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fill ptarget 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+
+;************************************************************
+
+
+pdef create_pipes
+
+  ptrigger=0
+
+end
+
+;************************************************************
+
+
+pdef control
+  poffset=((1-poffset_marker)*plastoffset)+(poffset_marker*ip1)
+  plastoffset=poffset
+
+  pfeedback=plastout-(5*(ip1-ptarget-((1-zeroclamp)*poffset))/10000)
+  pout=((1-pservo)*pfl)+(pservo*pfeedback)
+
+  copy(pout,plastout,op1)
+  copy(ptrigger,op0)
+
+  merge(ip0,ip1,ip2,ip3,$binout)
+end
+
+;************************************************************
+
+
+odef outputproc 2
+  outputwait 2
+  update burst
+  set op0 a0
+  set op1 a1
+  time 500
+end
+
+;************************************************************
+
+idef inputproc 4
+  set ip0 s0
+  set ip1 s1
+  set ip2 s2
+  set ip3 s3
+  count 4000
+  time 250
+end
+
+;************************************************************
+
+start create_pipes,control,outputproc,inputproc

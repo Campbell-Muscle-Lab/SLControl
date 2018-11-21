@@ -1,0 +1,9 @@
+
+pdef control
+  op0=pfl
+  op1=ptriggers
+  merge(ip0,ip1,ip2,ip3,$binout)
+end
+
+;***********************************************************
+

@@ -1,0 +1,38 @@
+RESET
+
+OPTION UNDERFLOWQ=OFF
+OPTION ERRORQ=OFF
+OPTION SCHEDULING=FIXED
+OPTION BUFFERING=OFF
+OPTION QUANTUM=100
+
+;************************************************************
+
+// Header
+
+pipes pfl MAXSIZE=65500
+pipes ptarget MAXSIZE=65500
+
+pipes pservo MAXSIZE=65500
+
+pipes poffset_marker MAXSIZE=65500
+pipes poffset MAXSIZE=65500
+pipes plastoffset MAXSIZE=65500
+
+pipes pout MAXSIZE=65500
+pipes plastout MAXSIZE=65500
+
+pipes pfeedback MAXSIZE=65500
+
+pipes ptrigger MAXSIZE=65500
+
+;************************************************************
+
+variables zeroclamp
+
+;************************************************************
+
+let zeroclamp=0
+
+;************************************************************
+

@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E91625CC-21DC-4D30-A55E-BD2727BDA712}</ProjectGuid>
+    <RootNamespace>SLControl</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Debug/SLControl.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>c:\Program Files\Microstar Laboratories\DapDev\DLL\Lib\MC;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DAPIO32;_DEBUG;WIN32;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Debug/SLControl.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>dapio32.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\Debug/SLControl.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>c:\windows\system32;C:\Program Files\Microstar Laboratories\DapDev\dll\lib\mc\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\Debug/SLControl.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Release/SLControl.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>NDEBUG;DAPIO32;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Release/SLControl.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
+      <ObjectFileName>.\Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>dapio32.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\Release/SLControl.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>C:\Lab\Ken\SLControl\SLControl_VStudio2005\SLControl\MicrostarLabs_Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ProgramDatabaseFile>.\Release/SLControl.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Abort_multiple_trials.cpp" />
+    <ClCompile Include="Abort_multiple_trials_dialog.cpp" />
+    <ClCompile Include="Analysis_display.cpp" />
+    <ClCompile Include="Batch_analysis.cpp" />
+    <ClCompile Include="Cal_display.cpp" />
+    <ClCompile Include="Calibration.cpp" />
+    <ClCompile Include="Channel_control.cpp" />
+    <ClCompile Include="Channel_tab.cpp" />
+    <ClCompile Include="Chirp.cpp" />
+    <ClCompile Include="Cyclical.cpp" />
+    <ClCompile Include="Data_record.cpp" />
+    <ClCompile Include="Experiment_display.cpp" />
+    <ClCompile Include="File_header.cpp" />
+    <ClCompile Include="Fit_control.cpp" />
+    <ClCompile Include="Fit_parameters.cpp" />
+    <ClCompile Include="global_functions.cpp" />
+    <ClCompile Include="LC_dout_page.cpp" />
+    <ClCompile Include="LC_dout_tab.cpp" />
+    <ClCompile Include="LC_dout_tab_control.cpp" />
+    <ClCompile Include="LC_freeform_page.cpp" />
+    <ClCompile Include="LC_generic_page.cpp" />
+    <ClCompile Include="LC_ktr_step_page.cpp" />
+    <ClCompile Include="LC_ramp_page.cpp" />
+    <ClCompile Include="LC_summary_page.cpp" />
+    <ClCompile Include="LC_triggered_page.cpp" />
+    <ClCompile Include="Length_Control_Dialog.cpp" />
+    <ClCompile Include="Length_control_sheet.cpp" />
+    <ClCompile Include="NR.cpp" />
+    <ClCompile Include="PathDialog.cpp" />
+    <ClCompile Include="Plot.cpp" />
+    <ClCompile Include="Scan_channels.cpp" />
+    <ClCompile Include="SL_SREC.cpp" />
+    <ClCompile Include="SLControl.cpp" />
+    <ClCompile Include="SLControlDlg.cpp" />
+    <ClCompile Include="Square_wave.cpp" />
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Superposition.cpp" />
+    <ClCompile Include="Superposition_control.cpp" />
+    <ClCompile Include="Tension_control_dialog.cpp" />
+    <ClCompile Include="Triggers.cpp" />
+    <ClCompile Include="Update_check.cpp" />
+    <ClCompile Include="WebVersion.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SLControl.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Abort_multiple_trials.h" />
+    <ClInclude Include="Abort_multiple_trials_dialog.h" />
+    <ClInclude Include="Analysis_display.h" />
+    <ClInclude Include="Batch_analysis.h" />
+    <ClInclude Include="Cal_display.h" />
+    <ClInclude Include="Calibration.h" />
+    <ClInclude Include="Channel_control.h" />
+    <ClInclude Include="Channel_tab.h" />
+    <ClInclude Include="Chirp.h" />
+    <ClInclude Include="Cyclical.h" />
+    <ClInclude Include="data_record.h" />
+    <ClInclude Include="Experiment_display.h" />
+    <ClInclude Include="File_header.h" />
+    <ClInclude Include="Fit_control.h" />
+    <ClInclude Include="Fit_parameters.h" />
+    <ClInclude Include="global_definitions.h" />
+    <ClInclude Include="global_functions.h" />
+    <ClInclude Include="InetHandle.h" />
+    <ClInclude Include="LC_dout_page.h" />
+    <ClInclude Include="LC_dout_tab.h" />
+    <ClInclude Include="LC_dout_tab_control.h" />
+    <ClInclude Include="LC_freeform_page.h" />
+    <ClInclude Include="LC_generic_page.h" />
+    <ClInclude Include="LC_ktr_step_page.h" />
+    <ClInclude Include="LC_ramp_page.h" />
+    <ClInclude Include="LC_summary_page.h" />
+    <ClInclude Include="LC_triggered_page.h" />
+    <ClInclude Include="Length_Control_Dialog.h" />
+    <ClInclude Include="Length_control_sheet.h" />
+    <ClInclude Include="NR.h" />
+    <ClInclude Include="PathDialog.h" />
+    <ClInclude Include="Plot.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Scan_channels.h" />
+    <ClInclude Include="SL_SREC.h" />
+    <ClInclude Include="SLControl.h" />
+    <ClInclude Include="SLControlDlg.h" />
+    <ClInclude Include="Square_wave.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="Superposition.h" />
+    <ClInclude Include="Superposition_control.h" />
+    <ClInclude Include="Tension_control_dialog.h" />
+    <ClInclude Include="Triggers.h" />
+    <ClInclude Include="Update_check.h" />
+    <ClInclude Include="WebVersion.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resource.hm" />
+    <None Include="res\SLP.ico" />
+    <None Include="res\cursor1.cur" />
+    <None Include="res\methods_256colors.bmp" />
+    <None Include="res\SLControl.ico" />
+    <None Include="res\SLControl.rc2" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="SLControl.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,81 @@
+RESET
+
+OPTION UNDERFLOWQ=OFF
+OPTION ERRORQ=OFF
+OPTION SCHEDULING=FIXED
+OPTION BUFFERING=OFF
+OPTION QUANTUM=100
+
+;************************************************************
+
+pipes phigh
+pipes pplus
+pipes pneg
+pipes pzero
+pipes pzero2
+pipes pzero3
+
+pipes pout
+pipes ptrig
+
+pipes ptrig_high
+pipes ptrig_low
+
+constants duration=20
+constants fl_step=-4217
+
+constants trigger_level=32439
+constants trig_high=1
+constants trig_low=39
+
+;*************************************************************
+
+pdef create_pipes
+  pplus=fl_step
+  pneg=-fl_step
+  pzero=0
+
+  ptrig_high=trigger_level
+  ptrig_low=0
+  nmerge(duration,pneg,duration,pplus,pout)
+  nmerge(trig_high,ptrig_high,trig_low,ptrig_low,ptrig)
+end
+
+;*************************************************************
+
+pdef control
+  copy(ptrig,op0)
+  copy(pout,op1)
+end
+
+;*************************************************************
+
+odef output_proc 2
+  set op0 a0
+  set op1 a1
+  time 500
+end
+
+;*************************************************************
+
+pdef zero_control
+  pzero2=0
+  pzero3=0
+
+  copy(pzero2,op0)
+  copy(pzero3,op1)
+end
+
+;*************************************************************
+
+odef output_zero 2
+  set op0 a0
+  set op1 a1
+  time 500
+  count 2
+end
+
+;*************************************************************
+
+start create_pipes,control,output_proc
+
