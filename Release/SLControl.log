@@ -1,0 +1,64 @@
+﻿Build started 2/14/2019 8:19:38 PM.
+     1>Project "C:\ken\GitHub\CampbellMuscleLab\SLControl\SLControl.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching ".\Release\SLControl.unsuccessfulbuild".
+       ClCompile:
+         All outputs are up-to-date.
+         All outputs are up-to-date.
+       ResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Release/SLControl.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:DLL dapio32.lib wininet.lib /NODEFAULTLIB:LIBCMT /MANIFEST /ManifestFile:".\Release\SLControl.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:".\Release/SLControl.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Release\SLControl.lib" /MACHINE:X86 .\Release\SLControl.res
+         .\Release/Abort_multiple_trials.obj
+         .\Release/Abort_multiple_trials_dialog.obj
+         .\Release/Analysis_display.obj
+         .\Release/Batch_analysis.obj
+         .\Release/Cal_display.obj
+         .\Release/Calibration.obj
+         .\Release/Channel_control.obj
+         .\Release/Channel_tab.obj
+         .\Release/Chirp.obj
+         .\Release/Cyclical.obj
+         .\Release/Data_record.obj
+         .\Release/Experiment_display.obj
+         .\Release/File_header.obj
+         .\Release/Fit_control.obj
+         .\Release/Fit_parameters.obj
+         .\Release/global_functions.obj
+         .\Release/LC_dout_page.obj
+         .\Release/LC_dout_tab.obj
+         .\Release/LC_dout_tab_control.obj
+         .\Release/LC_freeform_page.obj
+         .\Release/LC_generic_page.obj
+         .\Release/LC_ktr_step_page.obj
+         .\Release/LC_ramp_page.obj
+         .\Release/LC_summary_page.obj
+         .\Release/LC_triggered_page.obj
+         .\Release/Length_Control_Dialog.obj
+         .\Release/Length_control_sheet.obj
+         .\Release/NR.obj
+         .\Release/PathDialog.obj
+         .\Release/Plot.obj
+         .\Release/Scan_channels.obj
+         .\Release/SL_SREC.obj
+         .\Release/SLControl.obj
+         .\Release/SLControlDlg.obj
+         .\Release/Square_wave.obj
+         .\Release/StdAfx.obj
+         .\Release/Superposition.obj
+         .\Release/Superposition_control.obj
+         .\Release/Tension_control_dialog.obj
+         .\Release/Triggers.obj
+         .\Release/Update_check.obj
+         .\Release/WebVersion.obj /MACHINE:I386 
+         SLControl.vcxproj -> C:\ken\GitHub\CampbellMuscleLab\SLControl\.\Release\SLControl.exe
+       Manifest:
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:".\Release/SLControl.exe;#1" /manifest .\Release\SLControl.exe.intermediate.manifest "c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
+       FinalizeBuildStatus:
+         Deleting file ".\Release\SLControl.unsuccessfulbuild".
+         Touching ".\Release\SLControl.lastbuildstate".
+     1>Done Building Project "C:\ken\GitHub\CampbellMuscleLab\SLControl\SLControl.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.58

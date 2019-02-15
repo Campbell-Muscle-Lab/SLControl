@@ -121,7 +121,7 @@
       <AdditionalDependencies>dapio32.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\Release/SLControl.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>C:\Lab\Ken\SLControl\SLControl_VStudio2005\SLControl\MicrostarLabs_Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>DLL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ProgramDatabaseFile>.\Release/SLControl.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>

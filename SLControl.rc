@@ -18,13 +18,11 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// English (U.S.) resources
+// English (United States) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
-#ifdef _WIN32
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
-#endif //_WIN32
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -202,14 +200,14 @@ BEGIN
     EDITTEXT        IDC_FILE_INFO_BOX,5,130,121,36,ES_MULTILINE | ES_WANTRETURN | WS_VSCROLL,WS_EX_RTLREADING
 END
 
-IDD_Calibration_Display DIALOG  0, 0, 186, 162
+IDD_Calibration_Display DIALOG 0, 0, 186, 162
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
 CAPTION "Calibration Display"
 FONT 8, "MS Sans Serif"
 BEGIN
 END
 
-IDD_Experiment_display DIALOG  0, 0, 186, 95
+IDD_Experiment_display DIALOG 0, 0, 186, 95
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
 CAPTION 
 "Experiment Display - A (+Ctrl) = Left (Quickly), S=Swap, D (+Ctrl) = Right (Quickly), E=Expand, W=Reset"
@@ -217,7 +215,7 @@ FONT 8, "MS Sans Serif"
 BEGIN
 END
 
-IDD_FIT_CONTROL DIALOG  0, 0, 318, 135
+IDD_FIT_CONTROL DIALOG 0, 0, 318, 135
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
 CAPTION "Fit Control"
 FONT 8, "MS Sans Serif"
@@ -256,7 +254,7 @@ FONT 8, "MS Sans Serif", 0, 0, 0x1
 BEGIN
 END
 
-IDD_SQUARE_WAVE_DIALOG DIALOG  0, 0, 204, 134
+IDD_SQUARE_WAVE_DIALOG DIALOG 0, 0, 204, 134
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Fiber Length Square Wave and Trigger Check"
 FONT 8, "MS Sans Serif"
@@ -273,7 +271,7 @@ BEGIN
     LTEXT           "at the same time as any other DAPL control panel",IDC_STATIC,25,22,156,8
 END
 
-IDD_Scan_channels_dialog DIALOG  0, 0, 319, 228
+IDD_Scan_channels_dialog DIALOG 0, 0, 319, 228
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Low Frequency Channel Scan (Software timed)"
 FONT 8, "MS Sans Serif"
@@ -386,7 +384,7 @@ BEGIN
     LTEXT           "Integ.",IDC_STATIC,361,132,22,12,SS_CENTERIMAGE
 END
 
-IDD_BATCH_ANALYSIS DIALOG  0, 0, 285, 257
+IDD_BATCH_ANALYSIS DIALOG 0, 0, 285, 257
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Batch Analysis"
 FONT 8, "MS Sans Serif"
@@ -552,7 +550,7 @@ BEGIN
     LTEXT           "Function",IDC_STATIC,303,77,33,12,SS_CENTERIMAGE
 END
 
-IDD_FILE_HEADER DIALOG  0, 0, 274, 182
+IDD_FILE_HEADER DIALOG 0, 0, 274, 182
 STYLE DS_SETFONT | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -879,7 +877,7 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO 
+GUIDELINES DESIGNINFO
 BEGIN
     IDD_ANALYSIS_DISPLAY, DIALOG
     BEGIN
@@ -1022,7 +1020,7 @@ END
 // Menu
 //
 
-IDR_SLCONTROL_MENU MENU 
+IDR_SLCONTROL_MENU MENU
 BEGIN
     POPUP "&File"
     BEGIN
@@ -1065,7 +1063,7 @@ BEGIN
     END
 END
 
-IDR_ANALYSIS_DISPLAY_MENU MENU 
+IDR_ANALYSIS_DISPLAY_MENU MENU
 BEGIN
     POPUP "&File"
     BEGIN
@@ -1090,7 +1088,7 @@ BEGIN
     END
 END
 
-IDR_SUPERPOSITION_MENU MENU 
+IDR_SUPERPOSITION_MENU MENU
 BEGIN
     POPUP "&File"
     BEGIN
@@ -1258,6 +1256,12 @@ BEGIN
 0x3035, 0x0030, 
     IDC_SAMPLING_RATE, 0x403, 5, 0
 0x3031, 0x3030, "\000" 
+    IDC_SAMPLING_RATE, 0x403, 5, 0
+0x3032, 0x3030, "\000" 
+    IDC_SAMPLING_RATE, 0x403, 5, 0
+0x3532, 0x3030, "\000" 
+    IDC_SAMPLING_RATE, 0x403, 5, 0
+0x3035, 0x3030, "\000" 
     IDC_SAMPLING_RATE, 0x403, 6, 0
 0x3031, 0x3030, 0x0030, 
     IDC_SAMPLING_RATE, 0x403, 6, 0
@@ -1431,12 +1435,12 @@ IDC_CURSOR1             CURSOR                  "res\\cursor1.cur"
 // String Table
 //
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_ABOUTBOX            "&About SLControl..."
 END
 
-#endif    // English (U.S.) resources
+#endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
